@@ -1,0 +1,12 @@
+.App main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 125px;
+	padding-inline: 48.4px;
+	margin-top: 88.7px;
+}
+
+.container {
+	max-width: 445px;
+	/* background-color: #80808038; */
+}

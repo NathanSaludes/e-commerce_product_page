@@ -1,0 +1,39 @@
+.product-image {
+	width: 100%;
+	height: 445px;
+	border-radius: 16px;
+	overflow: hidden;
+	margin-bottom: 32.7px;
+}
+
+.product-image img {
+	width: 100%;
+	aspect-ratio: 1;
+	object-fit: cover;
+}
+
+.thumbnails {
+	display: flex;
+	justify-content: space-between;
+	gap: 31px;
+}
+
+.thumbnails a.thumbnail-item {
+	border-radius: 10px;
+	overflow: hidden;
+	height: 87px;
+}
+
+.thumbnails a.thumbnail-item:hover {
+	opacity: 0.8;
+}
+
+.thumbnails a.thumbnail-item.active {
+	outline: 5px solid var(--primary-orange);
+	opacity: 0.5;
+}
+
+.thumbnails a.thumbnail-item img {
+	width: 100%;
+	aspect-ratio: 1;
+}
