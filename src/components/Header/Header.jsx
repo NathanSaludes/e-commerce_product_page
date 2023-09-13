@@ -1,12 +1,20 @@
+import { useState, useContext } from 'react'
 import './header.css';
 
+import CartPreview from '../CartPreview/CartPreview.jsx'
+
+import { CartContext } from "../../contexts/CartContext.js";
+
 function Header() {
+
+  const { cartItemCount, toggleCart } = useContext(CartContext);
+
   return (
     <header>
       <div className="left">
-        <div className="logo">
+        <a href="#" className="logo">
           <img src="/images/logo.svg" alt="sneakers" />
-        </div>
+        </a>
         <nav>
           <ul>
             <li><a href="#">Collections</a></li>
@@ -18,9 +26,12 @@ function Header() {
         </nav>
       </div>
       <div className="right">
-        <a href="#" className="cart">
-          <span className="cart-icon"></span>
-        </a>
+        <button
+          className="cart"
+          cart-items={cartItemCount}
+          onClick={toggleCart}>
+        </button>
+        <CartPreview />
         <div className="user-avatar">
           <img src="/images/image-avatar.png" alt="user avatar" />
         </div>

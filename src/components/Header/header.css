@@ -2,11 +2,17 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding-block: 28px 32.4px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.099);
+	/* background-color: #ff00ff2c; */
 }
 
 .left {
+	display: flex;
+	align-items: center;
+}
+
+.right {
+	position: relative;
 	display: flex;
 }
 
@@ -20,30 +26,67 @@
 }
 
 nav ul {
-	display: inline-flex;
+	display: flex;
 	gap: 32.2px;
 }
 
 nav ul li a {
+	display: block;
 	text-decoration: none;
 	line-height: 1;
 	font-size: 15.3px;
+	color: var(--accent-dark-grayish-blue);
+	position: relative;
+	padding-block: 47px 50px;
+}
+
+nav ul li a:hover {
 	color: var(--black);
 }
 
-.cart {
-	display: inline-block;
-	border-radius: 50%;
+nav ul li a:hover::after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 5px;
+	background: var(--primary-orange);
 }
 
-.cart span.cart-icon {
-	display: block;
+button.cart {
+	display: inline-block;
+	border-radius: 50%;
 	width: 50px;
 	aspect-ratio: 1;
 	background-image: url('/images/icon-cart.svg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 20.4px;
+	position: relative;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+button.cart:hover {
+	background-color: var(--accent-light-grayish-blue);
+}
+
+.cart::after {
+	content: attr(cart-items);
+	background: var(--primary-orange);
+	display: block;
+	position: absolute;
+	top: 7px;
+	left: 23px;
+	min-width: 10px;
+	height: 10px;
+	padding: 4px;
+	border-radius: 16px;
+	font-size: 9px;
+	color: var(--white);
+	text-align: center;
 }
 
 .user-avatar {
@@ -51,8 +94,21 @@ nav ul li a {
 	aspect-ratio: 1;
 	height: 50px;
 	margin-left: 31px;
+	border-radius: 50%;
+}
+
+.user-avatar:hover {
+	outline: 3.2px solid var(--primary-orange);
+	cursor: pointer;
 }
 
 .user-avatar img {
 	width: 100%;
+}
+
+/* ----------------------------------------------------
+exceptions 
+---------------------------------------------------- */
+.cart[cart-items='0']::after {
+	display: none;
 }

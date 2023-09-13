@@ -1,9 +1,23 @@
 .App main {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 444.11px 1fr;
 	column-gap: 125px;
 	padding-inline: 48.4px;
-	margin-top: 88.7px;
+	margin-top: 89.7px;
+}
+
+@media screen and (max-width: 1152px) {
+	.App main {
+		column-gap: 44px;
+		padding-inline: 20px;
+	}
+}
+
+@media screen and (max-width: 1013px) {
+	.App main {
+		grid-template-columns: 1fr;
+		justify-items: center;
+	}
 }
 
 .container {

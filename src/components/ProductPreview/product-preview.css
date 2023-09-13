@@ -4,11 +4,17 @@
 	border-radius: 16px;
 	overflow: hidden;
 	margin-bottom: 32.7px;
+	cursor: pointer;
+	transition: 0.15s scale ease-in-out;
+}
+
+.product-image:hover {
+	opacity: 0.9;
 }
 
 .product-image img {
 	width: 100%;
-	aspect-ratio: 1;
+	height: 100%;
 	object-fit: cover;
 }
 
@@ -24,13 +30,16 @@
 	height: 87px;
 }
 
-.thumbnails a.thumbnail-item:hover {
-	opacity: 0.8;
+.thumbnails a.thumbnail-item.active {
+	outline: 3.5px solid var(--primary-orange);
 }
 
-.thumbnails a.thumbnail-item.active {
-	outline: 5px solid var(--primary-orange);
+.thumbnails a.thumbnail-item:hover img {
 	opacity: 0.5;
+}
+
+.thumbnails a.thumbnail-item.active img {
+	opacity: 0.3;
 }
 
 .thumbnails a.thumbnail-item img {

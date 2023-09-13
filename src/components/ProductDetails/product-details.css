@@ -58,16 +58,21 @@
 
 .product-details .controls {
 	display: flex;
+	flex-shrink: 0;
 	justify-content: space-between;
 	gap: 13px;
 }
 
 .product-details .controls .quantity {
-	flex-grow: 1;
-	display: flex;
+	background-color: var(--accent-light-grayish-blue);
+	width: 157px;
+	height: 56px;
+	display: block;
 	align-items: center;
 	border-radius: 9px;
 	overflow: hidden;
+	flex-shrink: 0;
+	position: relative;
 }
 
 .product-details .controls .quantity > * {
@@ -79,21 +84,34 @@
 }
 
 .product-details .controls .quantity button {
+	position: absolute;
+	display: block;
+	top: 0;
+	width: 46px;
 	cursor: pointer;
-	background-color: transparent;
 	border: none;
+	background: transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: 0.1s opacity ease-in-out;
+}
+
+.product-details .controls .quantity button:hover {
+	opacity: 0.8;
+}
+
+.product-details .controls .quantity button:active {
+	opacity: 1;
 }
 
 .product-details .controls .quantity button.decrease {
-	display: block;
-	background: url('/images/icon-minus.svg') no-repeat center;
-	background-position: 16px center;
+	left: 0;
+	background-image: url('/images/icon-minus.svg');
 }
 
 .product-details .controls .quantity button.increase {
-	display: block;
-	background: url('/images/icon-plus.svg') no-repeat center;
-	background-position: 28px center;
+	right: 0;
+	background-image: url('/images/icon-plus.svg');
 }
 
 .product-details .controls .quantity span.value {
@@ -107,22 +125,41 @@
 	font-family: 'Kumbh Sans', sans-serif;
 	font-size: 16px;
 	font-weight: 700;
-	padding: 18px 79px;
+	padding: 16px 77px;
 	border-radius: 9px;
 	border: none;
 	background-color: var(--primary-orange);
 	display: flex;
+	flex-shrink: 0;
 	align-items: center;
 	justify-content: space-between;
 	gap: 11px;
 	cursor: pointer;
 }
 
+.product-details .controls button.add-to-cart:hover {
+	box-shadow: 0 25px 50px -12px rgba(255, 125, 26, 0.341);
+}
+
+.product-details .controls button.add-to-cart:active {
+	opacity: 0.8;
+}
+
 .product-details .controls button.add-to-cart span.icon {
 	display: inline-block;
 	aspect-ratio: 1;
 	width: 19px;
-	/* background: url('/images/icon-cart.svg') no-repeat; */
 	background-position: center 1px;
 	background-size: contain;
+}
+
+/* exceptions */
+.product-details .controls .quantity button[data-state='disabled'] {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.product-details .controls button.add-to-cart[data-state='disabled'] {
+	opacity: 0.3;
+	cursor: not-allowed;
 }
