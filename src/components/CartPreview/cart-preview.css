@@ -1,0 +1,115 @@
+/* utilities */
+
+.cart-preview {
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	min-height: 252px;
+	max-height: 500px;
+	/* padding: 24px; */
+	background-color: #ffffff;
+	top: 67px;
+	width: 361px;
+	left: -153px;
+	border-radius: 10px;
+}
+
+.cart-preview .header {
+	border-bottom: 1px solid rgb(224, 225, 228);
+	padding: 24px;
+	font-weight: 800;
+}
+
+.cart-preview .body {
+	padding: 24px 20px 24px 24px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+}
+
+.cart-preview .body .cart-item {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	margin-bottom: 25px;
+}
+
+.cart-preview .body .empty-cart {
+	color: var(--accent-dark-grayish-blue);
+	font-weight: 800;
+}
+
+.cart-preview .body .cart-item .item-thumbnail {
+	width: 50px;
+	aspect-ratio: 1;
+	overflow: hidden;
+	border-radius: 5px;
+	flex-shrink: 0;
+}
+
+.cart-preview .body .cart-item .item-thumbnail img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.cart-preview .body .cart-item .item-details {
+	line-height: 1.6;
+	color: var(--accent-dark-grayish-blue);
+}
+
+.cart-preview .body .cart-item .item-details .name {
+	display: block;
+	text-transform: capitalize;
+	text-decoration: none;
+	color: var(--accent-dark-grayish-blue);
+}
+
+.cart-preview .body .cart-item .item-details .unit-price,
+.cart-preview .body .cart-item .item-details .quantity,
+.cart-preview .body .cart-item .item-details .net-price {
+	letter-spacing: 1px;
+}
+
+.cart-preview .body .cart-item .item-details .net-price {
+	color: var(--accent-very-dark-blue);
+	font-weight: 700;
+}
+
+.cart-preview .body .cart-item button.remove-item {
+	height: 20px;
+	padding: 12px;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+	background-image: url('/images/icon-delete.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	justify-self: flex-end;
+}
+
+.cart-preview .body button.checkout {
+	width: 100%;
+	padding-block: 18px;
+	font-size: 16px;
+	font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 700;
+	border-radius: 10px;
+	border: none;
+	background-color: var(--primary-orange);
+	cursor: pointer;
+	transition: 0.1s opacity ease-in-out;
+}
+
+.cart-preview .body button.checkout:active {
+	opacity: 0.8;
+}
+
+/* --------------------------------------------
+exceptions
+-------------------------------------------- */
+.cart-preview[data-state='open'] {
+	display: flex;
+}

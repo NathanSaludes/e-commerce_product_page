@@ -1,0 +1,165 @@
+.product-details {
+	margin-top: 64px;
+}
+
+.product-details h3.company-name {
+	color: var(--primary-orange);
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 13px;
+	letter-spacing: 1.9px;
+	margin-bottom: 21px;
+}
+
+.product-details h1.product-name {
+	color: var(--black);
+	font-size: 44px;
+	font-weight: 800;
+	line-height: 1.08;
+	margin-bottom: 36.9px;
+}
+
+.product-details p.product-description {
+	letter-spacing: 0.09px;
+	line-height: 1.57;
+	margin-bottom: 30.3px;
+}
+
+.product-details .pricing {
+	margin-bottom: 39px;
+}
+
+.product-details .pricing h2.product-price {
+	font-weight: 800;
+	font-size: 28px;
+	letter-spacing: 1.3px;
+	line-height: 0.93;
+	display: flex;
+	align-items: center;
+	gap: 13px;
+	margin-bottom: 15px;
+}
+
+.product-details .pricing h2.product-price span.discount {
+	display: inline-block;
+	font-size: 16px;
+	background-color: var(--primary-pale-orange);
+	color: var(--primary-orange);
+	padding: 5.8px 8px;
+	border-radius: 5px;
+}
+
+.product-details .pricing .previous-price {
+	font-weight: 800;
+	text-decoration: line-through;
+	color: var(--accent-grayish-blue);
+	letter-spacing: 0.8px;
+}
+
+.product-details .controls {
+	display: flex;
+	flex-shrink: 0;
+	justify-content: space-between;
+	gap: 13px;
+}
+
+.product-details .controls .quantity {
+	background-color: var(--accent-light-grayish-blue);
+	width: 157px;
+	height: 56px;
+	display: block;
+	align-items: center;
+	border-radius: 9px;
+	overflow: hidden;
+	flex-shrink: 0;
+	position: relative;
+}
+
+.product-details .controls .quantity > * {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.product-details .controls .quantity button {
+	position: absolute;
+	display: block;
+	top: 0;
+	width: 46px;
+	cursor: pointer;
+	border: none;
+	background: transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: 0.1s opacity ease-in-out;
+}
+
+.product-details .controls .quantity button:hover {
+	opacity: 0.8;
+}
+
+.product-details .controls .quantity button:active {
+	opacity: 1;
+}
+
+.product-details .controls .quantity button.decrease {
+	left: 0;
+	background-image: url('/images/icon-minus.svg');
+}
+
+.product-details .controls .quantity button.increase {
+	right: 0;
+	background-image: url('/images/icon-plus.svg');
+}
+
+.product-details .controls .quantity span.value {
+	text-align: center;
+	color: var(--black);
+	font-weight: 700;
+	font-size: 17px;
+}
+
+.product-details .controls button.add-to-cart {
+	font-family: 'Kumbh Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 16px 77px;
+	border-radius: 9px;
+	border: none;
+	background-color: var(--primary-orange);
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	justify-content: space-between;
+	gap: 11px;
+	cursor: pointer;
+}
+
+.product-details .controls button.add-to-cart:hover {
+	box-shadow: 0 25px 50px -12px rgba(255, 125, 26, 0.341);
+}
+
+.product-details .controls button.add-to-cart:active {
+	opacity: 0.8;
+}
+
+.product-details .controls button.add-to-cart span.icon {
+	display: inline-block;
+	aspect-ratio: 1;
+	width: 19px;
+	background-position: center 1px;
+	background-size: contain;
+}
+
+/* exceptions */
+.product-details .controls .quantity button[data-state='disabled'] {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.product-details .controls button.add-to-cart[data-state='disabled'] {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
